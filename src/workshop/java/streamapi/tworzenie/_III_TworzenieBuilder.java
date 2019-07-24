@@ -1,5 +1,7 @@
 package workshop.java.streamapi.tworzenie;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class _III_TworzenieBuilder {
@@ -22,6 +24,17 @@ public class _III_TworzenieBuilder {
             .add("Winter")
             .build()
             .forEach(System.out::println);
+
+    System.out.println("---");
+
+    Stream<String> poryRoku = Stream.<String>builder()
+            .add("Wiosna")
+            .add("Lato")
+            .add("Jesień")
+            .add("Zimia")
+            .build();
+
+    poryRoku.forEach(s -> System.out.println(s));
 
     }
 }
