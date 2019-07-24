@@ -11,10 +11,8 @@ public class _VII {
 
                      Optional<T> findAny()
 
-                     TODO utwórz listę "A","B","C","x","D","E", użyj findFirst i findAny do wyszukania "x",
+                     TODO utwórz listę "A","B","C","x","D","E", użyj findFirst i findAny",
                      wydrukuj do konsoli.
-
-                     Wykasuj "x" przy tworzeniu listy, uruchom ponownie program.
 
                 */
 
