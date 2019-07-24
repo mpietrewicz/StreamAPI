@@ -1,6 +1,7 @@
 package workshop.java.streamapi.tworzenie;
 
 import java.util.Random;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class _V_TworzenieGenerate {
@@ -19,5 +20,10 @@ public class _V_TworzenieGenerate {
 
         Stream.generate(new Random()::nextInt)
                 .limit(10).forEach(System.out::println);
+
+        System.out.println("---");
+
+        IntStream.rangeClosed(new Random().nextInt(), new Random().nextInt())
+                .limit(5).forEach(System.out::println);
     }
 }
