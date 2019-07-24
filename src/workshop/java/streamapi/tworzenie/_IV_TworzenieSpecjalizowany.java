@@ -18,6 +18,11 @@ public class _IV_TworzenieSpecjalizowany {
         System.out.println();
         IntStream.rangeClosed(1, 10).forEach(i -> System.out.print(i + " "));
 
+        System.out.println("");
+
+        IntStream.range(1, 2).forEach(i -> System.out.print(i + " "));
+        System.out.println("");
+        IntStream.rangeClosed(1, 2).forEach( i -> System.out.print(i + " "));
     }
 }
 
