@@ -38,15 +38,34 @@ public class _II_Predicate {
 
         Predicate<Person> below18 = p -> p.getAge() < 18;
         Predicate<Person> endsWithI = p -> p.getName().endsWith("i");
+        Predicate<Person> endWithSkiPredicate = p -> p.getName().endsWith("ski");
 
 
         List<Person> below18List = people
                 .stream()
                 .filter(below18).collect(Collectors.toList());
+        System.out.println("Below 18: " +below18List);
 
         List<Person> endsWithIList = people
                 .stream()
                 .filter(below18.and(endsWithI)).collect(Collectors.toList());
+        System.out.println("below 18 and ends with I: " +endsWithIList);
+
+        List<Person> endWithSki = people
+                .stream()
+                .filter(endWithSkiPredicate).collect(Collectors.toList());
+        System.out.println("Ends with ski: " +endWithSki);
+
+        Predicate<String> endWithSkiPredicate2 = p -> p.endsWith("ski");
+
+        List<String> uniqueNames = people
+                .stream()
+                .map(Person::getName).distinct()
+                .filter(endWithSkiPredicate2)
+                .collect(Collectors.toList());
+
+        System.out.println(uniqueNames);
+
 
 
     }
@@ -67,5 +86,13 @@ class Person {
 
     public int getAge() {
         return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
