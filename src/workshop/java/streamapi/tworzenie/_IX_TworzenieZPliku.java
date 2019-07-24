@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class _IX_TworzenieZPliku {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         /*
             [Klasa: java.nio.file.Files]
 
@@ -27,5 +27,11 @@ public class _IX_TworzenieZPliku {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.println("---");
+
+        Path path1ToTextFile = Paths.get("test.txt");
+        Stream<String> linie = Files.lines(path);
+        linie.forEach(System.out::println);
     }
 }
